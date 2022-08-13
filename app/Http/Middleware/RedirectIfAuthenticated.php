@@ -21,8 +21,8 @@ class RedirectIfAuthenticated
         if (Auth::guard($guard)->check()) {
             if (Auth::user()->role->name == 'administrator') {
                 return redirect('/admin');
-            } elseif (Auth::user()->role->name == 'ppic') {
-                return redirect('/ppic');
+            } elseif (Auth::user()->role->name == 'customer') {
+                return redirect('/customer');
             }else {
                 return redirect('/produksi');
             }

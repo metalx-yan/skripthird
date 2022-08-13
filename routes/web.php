@@ -24,19 +24,17 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     Route::resource('members', 'MemberController');
     Route::resource('users', 'UserController');
     Route::resource('peminjamans', 'PeminjamanController');
+    Route::put('/restore/{id}', 'BookingController@restore')->name('admin.restore');
+
 });
 
-Route::group(['prefix' => 'ppic', 'middleware' => ['auth', 'role:ppic']], function() {
+Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'role:customer']], function() {
 
     Route::get('/', function () {
-        return view('ppic.indux');
+        return view('customer.index');
     });
-    Route::put('/prosesret/process/{id}', 'ProsesReturController@prosesacc')->name('prosesretacc');
-    Route::put('/prosesret/decline/{id}', 'ProsesReturController@prosesdec')->name('prosesretdec');
-    Route::put('/prosesret/data/{id}', 'ProsesReturController@data')->name('data');
-    Route::get('/spk', 'ProsesReturController@spk')->name('spk');
-    Route::resource('prosesretur', 'ProsesReturController');
-    Route::resource('spkproduksi', 'SpkProduksiController');
+    Route::get('/lists', 'BookingController@lists')->name('customer.lists');
+    Route::put('/lists/{id}', 'BookingController@listsApprove')->name('customer.lists.approve');
 });
 
 Route::group(['prefix' => 'produksi', 'middleware' => ['auth', 'role:produksi']], function() {
@@ -44,10 +42,11 @@ Route::group(['prefix' => 'produksi', 'middleware' => ['auth', 'role:produksi']]
     Route::get('/', function () {
         return view('produksis.index');
     });
-    Route::get('/spbspk', 'SpbSpkController@all')->name('spbspk');
+    // Route::get('/spbspk', 'SpbSpkController@all')->name('spbspk');
 });
 
 
+Route::resource('bookings', 'BookingController');
 Route::get('/', function () {
 
     return view('welcome');

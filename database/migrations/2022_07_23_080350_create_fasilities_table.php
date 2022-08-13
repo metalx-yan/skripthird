@@ -19,7 +19,7 @@ class CreateFasilitiesTable extends Migration
             $table->string('image');
             $table->string('desc');
             $table->integer('price');
-            $table->integer('satuan');
+            // $table->integer('satuan');
             $table->timestamps();
         });
 

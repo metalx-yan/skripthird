@@ -52,11 +52,11 @@
                         <input type="number" name="price" class="form-control {{ $errors->has('price') ? 'is-invalid' : ''}}" value="{{ $get->price }}" required>
                         {!! $errors->first('price', '<span class="invalid-feedback">:message</span>') !!}
                     </div>
-                    <div class="col-md-3">
+                    {{-- <div class="col-md-3">
                         <label for="">Satuan</label>
                         <input type="number" name="satuan" class="form-control {{ $errors->has('satuan') ? 'is-invalid' : ''}}" value="{{ $get->satuan }}" required>
                         {!! $errors->first('satuan', '<span class="invalid-feedback">:message</span>') !!}
-                    </div>
+                    </div> --}}
                 </div>
                     <br>
                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>

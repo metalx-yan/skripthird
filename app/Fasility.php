@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Fasility extends Model
 {
-    protected $fillable = ['name','category_id','image','desc','price','satuan'];
+    protected $fillable = ['name','category_id','image','desc','price'];
 
     public function category()
     {
@@ -17,4 +17,10 @@ class Fasility extends Model
     {
         return $this->hasMany(Peminjaman::class);
     }
+
+    public function booking()
+    {
+        return $this->hasOne(Booking::class);
+    }
+    
 }

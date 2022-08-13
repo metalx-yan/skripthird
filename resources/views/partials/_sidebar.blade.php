@@ -57,15 +57,15 @@
                 @endif
 
 
-                @if (Auth::user()->role->name == 'ppic')
+                @if (Auth::user()->role->name == 'customer')
                     <li class="nav-small-cap">PERSONAL</li>
                     <li>
-                        <a class="has-arrow" href="#" aria-expanded="false"><i
-                                class="mdi mdi-account-outline"></i><span class="hide-menu">Master Data</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{ route('prosesretur.index') }}">Data Proses Retur</a></li>
-                            <li><a href="{{ route('spk') }}">Data SPK</a></li>
-                        </ul>
+                        <a class="" href="{{ url('/customer') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
+                    </li>
+                    <li>
+                        <a class="" href="{{ route('customer.lists') }}" aria-expanded="false"><i class="mdi mdi-gauge"></i><span
+                                class="hide-menu">Lists Booking</span></a>
                     </li>
                 @endif
 
