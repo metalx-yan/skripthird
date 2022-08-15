@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->bigIncrements('id');
             $table->datetime('tanggal');
             $table->string('image');
-            $table->string('status');
+            $table->string('status')->default(0);
             $table->timestamps();
         });
 

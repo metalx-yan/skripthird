@@ -47,7 +47,7 @@ class FasilityController extends Controller
             'category_id' => $request->categori_id,
             'desc' => $request->desc,
             'price' => $request->price,
-            'satuan' => $request->satuan,
+            // 'satuan' => $request->satuan,
         ]);
 
         return redirect()->route('fasilities.index');
@@ -98,7 +98,7 @@ class FasilityController extends Controller
         $update->category_id = $request->categori_id;
         $update->desc = $request->desc;
         $update->price = $request->price;
-        $update->satuan = $request->satuan;
+        // $update->satuan = $request->satuan;
         $update->save();
 
         return redirect()->route('fasilities.index');
