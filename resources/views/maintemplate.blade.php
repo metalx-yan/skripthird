@@ -70,6 +70,10 @@
                                         </p>
                                         <div class="collapse" id="collapseExample{{ $item->id }}">
                                             <div class="card card-body">
+                                                <b>Transfer via rekening BCA</b>
+                                                <p><b><u>8797776690</u></b>
+                                                </p>
+                                                <p>Bukti pembayaran bisa langsung di upload :</p>
                                                 <form action="{{ route('bookings.store') }}" method="post"
                                                     enctype="multipart/form-data">
                                                     @csrf
@@ -118,6 +122,10 @@
                                             </p>
                                             <div class="collapse" id="collapseExample{{ $item->id }}">
                                                 <div class="card card-body">
+                                                    <b>Transfer via rekening BCA</b>
+                                                    <p><b><u>8797776690</u></b>
+                                                    </p>
+                                                    <p>Bukti pembayaran bisa langsung di upload :</p>
                                                     <form action="{{ route('bookings.store') }}" method="post"
                                                         enctype="multipart/form-data">
                                                         @csrf
