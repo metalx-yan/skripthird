@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class BookingController extends Controller
 {
@@ -34,6 +36,20 @@ class BookingController extends Controller
         return view('customer.list', compact('all'));
     }
 
+    public function adminlists()
+    {
+        $all = Booking::all();
+        // dd($all[0]->fasility);
+        return view('admin.list', compact('all'));
+    }
+
+    public function adminlistshistory()
+    {
+        $all = Booking::all();
+        // dd($all[0]->fasility);
+        return view('admin.listhistory', compact('all'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -51,6 +67,7 @@ class BookingController extends Controller
             'tanggal' => $request->tanggal,
             'image' => $request->image->move('images/',$gambar),
             'fasility_id' => $request->id,
+            'user_id' => Auth::user()->id
         ]);
 
         return redirect()->back();

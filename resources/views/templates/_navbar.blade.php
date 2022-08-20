@@ -18,6 +18,7 @@
                       <li><a href="#beranda" class="nav-link" style="color:cornflowerblue">Beranda</a></li>
                       {{-- <li><a href="#about-section" class="nav-link" style="color:cornflowerblue">Profile Perusahaan</a></li> --}}
                       <li><a href="#design" class="nav-link" style="color:cornflowerblue">Facility</a></li>
+                      <li><a href="/register" class="nav-link" target="_blank" style="color:cornflowerblue">Register</a></li>
                       {{-- <li><a href="#product" class="nav-link" style="color:cornflowerblue">Product</a></li>
                       <li><a href="#furniture" class="nav-link" style="color:cornflowerblue">Furniture</a></li> --}}
                       {{-- <li><a href="#lowongan-kerja" class="nav-link" style="color:cornflowerblue">Video Product</a></li> --}}

@@ -32,31 +32,25 @@
                             <th>Harga</th>
                             <th>Tanggal Booking</th>
                             <th>Bukti Pembayaran</th>
-                            <th>Status</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($all as $item)
-                            @if (Auth::user()->id == $item->user_id)
-                                <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $item->fasility->name }}</td>
-                                    <td><img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
-                                    <td>{{ $item->fasility->desc }}</td>
-                                    <td>{{ $item->fasility->price }}</td>
-                                    <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
-                                    <td><img src="{{ asset($item->image) }}" alt="" width="50%"></td>
-                                    <td>
-                                        @if ($item->status == '1')
-                                            <button type="button" class="btn btn-success btn-sm">Approve</button>
-                                        @elseif($item->status == '2')
-                                            <button type="button" class="btn btn-danger btn-sm">Decline</button>
-                                        @else
-                                            <button type="button" class="btn btn-secondary btn-sm">On Progress</button>
-                                        @endif
-                                    </td>
-                                </tr>
-                            @endif
+                            <tr>
+                                <td>{{ $no++ }}</td>
+                                <td>{{ $item->fasility->name }}</td>
+                                <td><img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
+                                <td>{{ $item->fasility->desc }}</td>
+                                <td>{{ $item->fasility->price }}</td>
+                                <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
+                                <td><img src="{{ asset($item->image) }}" alt="" width="50%"></td>
+                                <td>
+                                    @if ($item->status == '1')
+                                        <button type="button" class="btn btn-success btn-sm">Approve</button>
+                                    @endif
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

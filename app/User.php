@@ -48,6 +48,11 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
+
     public function hasRole($role)
     {
         if ($this->role()->where('name', $role)->first()) {

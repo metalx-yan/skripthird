@@ -25,6 +25,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     Route::resource('users', 'UserController');
     Route::resource('peminjamans', 'PeminjamanController');
     Route::put('/restore/{id}', 'BookingController@restore')->name('admin.restore');
+    Route::put('/lists/{id}', 'BookingController@listsApprove')->name('customer.lists.approve');
+    Route::get('/lists', 'BookingController@adminlists')->name('admin.lists');
+    Route::get('/lists/history', 'BookingController@adminlistshistory')->name('admin.lists.history');
+
 
 });
 
@@ -34,7 +38,6 @@ Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'role:customer']]
         return view('customer.index');
     });
     Route::get('/lists', 'BookingController@lists')->name('customer.lists');
-    Route::put('/lists/{id}', 'BookingController@listsApprove')->name('customer.lists.approve');
 });
 
 Route::group(['prefix' => 'produksi', 'middleware' => ['auth', 'role:produksi']], function() {

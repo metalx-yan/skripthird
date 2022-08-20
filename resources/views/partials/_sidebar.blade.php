@@ -43,6 +43,14 @@
                         <a class="" href="{{ route('peminjamans.index') }}" aria-expanded="false"><i
                                 class="mdi mdi-gauge"></i><span class="hide-menu">Peminjaman</span></a>
                     </li>
+                    <li>
+                        <a class="" href="{{ route('admin.lists') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Penyewaan</span></a>
+                    </li>
+                    <li>
+                        <a class="" href="{{ route('admin.lists.history') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">History Approved</span></a>
+                    </li>
                     {{-- <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Master Data</span></a>
                             <ul aria-expanded="false" class="collapse">

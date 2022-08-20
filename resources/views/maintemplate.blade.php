@@ -87,8 +87,18 @@
                                                         <label for="">Bukti Pembayaran</label>
                                                         <input type="file" name="image" class="form-control"
                                                             required id="">
-                                                        <button type="submit"
-                                                            class="btn btn-primary btn-sm">Submit</button>
+                                                        @if (Auth::user())
+                                                            @if (Auth::user()->role->id != 1)
+                                                                <button type="submit"
+                                                                    class="btn btn-primary btn-sm">Submit</button>
+                                                            @else
+                                                                <button type="button"
+                                                                    class="btn btn-primary btn-sm alert_role">Submit</button>
+                                                            @endif
+                                                        @else
+                                                            <button type="button"
+                                                                class="btn btn-primary btn-sm alert_login">Submit</button>
+                                                        @endif
                                                     </form>
                                                 </div>
                                             </div>
@@ -143,8 +153,18 @@
                                                             <label for="">Bukti Pembayaran</label>
                                                             <input type="file" name="image" class="form-control"
                                                                 required id="">
-                                                            <button type="submit"
-                                                                class="btn btn-primary btn-sm">Submit</button>
+                                                            @if (Auth::user())
+                                                                @if (Auth::user()->role->id != 1)
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary btn-sm">Submit</button>
+                                                                @else
+                                                                    <button type="button"
+                                                                        class="btn btn-primary btn-sm alert_role">Submit</button>
+                                                                @endif
+                                                            @else
+                                                                <button type="button"
+                                                                    class="btn btn-primary btn-sm alert_login">Submit</button>
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>
@@ -162,12 +182,8 @@
             </div>
         </div>
     </div>
-
-
     {{-- @include('templates._footer') --}}
     @include('templates._javascript')
-
-
     </div>
 
 </body>
@@ -180,6 +196,14 @@
             this.value = '';
             alert('Weekdayxs not allowed');
         }
+    });
+
+    $('.alert_login').click(function() {
+        alert('Silahkan login atau register jika belum mempunyai user');
+    });
+
+    $('.alert_role').click(function() {
+        alert('Silahkan login tidak sebagai admin');
     });
 </script>
 

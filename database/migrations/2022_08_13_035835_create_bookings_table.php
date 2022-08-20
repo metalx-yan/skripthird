@@ -23,8 +23,10 @@ class CreateBookingsTable extends Migration
 
         Schema::table('bookings', function (Blueprint $table) {
             $table->unsignedBigInteger('fasility_id');
+            $table->unsignedBigInteger('user_id');
 
             $table->foreign('fasility_id')->references('id')->on('fasilities');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
