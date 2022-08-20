@@ -8,7 +8,7 @@
                 <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Data Bookong</li>
+                    <li class="breadcrumb-item active">Data Booking</li>
                 </ol>
             </div>
         </div>
@@ -64,9 +64,10 @@
                                             </div>
                                             <div class="col-md-4"></div>
                                             <div class="col-md-2">
-                                                <form action="" method="post">
+                                                <form action="{{ route('customer.lists.approve', $item->id) }}" method="post">
                                                     @csrf
                                                     @method('PUT')
+                                                    <input type="hidden" value="2" name="status">
                                                     <button type="submit" class="btn btn-danger btn-sm"
                                                         onclick="return confirm('Are you sure you want to Decline?');">Decline</button>
                                                 </form>

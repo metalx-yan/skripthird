@@ -8,7 +8,7 @@
                 <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                    <li class="breadcrumb-item active">Data Bookong</li>
+                    <li class="breadcrumb-item active">Data Booking</li>
                 </ol>
             </div>
         </div>
