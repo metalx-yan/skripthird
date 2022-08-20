@@ -37,20 +37,22 @@
                     </thead>
                     <tbody>
                         @foreach ($all as $item)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>{{ $item->fasility->name }}</td>
-                                <td><img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
-                                <td>{{ $item->fasility->desc }}</td>
-                                <td>{{ $item->fasility->price }}</td>
-                                <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
-                                <td><img src="{{ asset($item->image) }}" alt="" width="50%"></td>
-                                <td>
-                                    @if ($item->status == '1')
-                                        <button type="button" class="btn btn-success btn-sm">Approve</button>
-                                    @endif
-                                </td>
-                            </tr>
+                            @if ($item->status == '1')
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $item->fasility->name }}</td>
+                                    <td><img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
+                                    <td>{{ $item->fasility->desc }}</td>
+                                    <td>{{ $item->fasility->price }}</td>
+                                    <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
+                                    <td><img src="{{ asset($item->image) }}" alt="" width="50%"></td>
+                                    <td>
+                                        @if ($item->status == '1')
+                                            <button type="button" class="btn btn-success btn-sm">Approve</button>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>
