@@ -203,7 +203,7 @@
     });
 
     $('.alert_role').click(function() {
-        alert('Silahkan login tidak sebagai admin');
+        alert('Login hanya dapat sebagai member');
     });
 </script>
 

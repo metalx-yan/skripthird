@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
 
 });
 
-Route::group(['prefix' => 'customer', 'middleware' => ['auth', 'role:customer']], function() {
+Route::group(['prefix' => 'member', 'middleware' => ['auth', 'role:member']], function() {
 
     Route::get('/', function () {
         return view('customer.index');

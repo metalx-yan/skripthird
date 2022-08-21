@@ -65,7 +65,7 @@
                 @endif
 
 
-                @if (Auth::user()->role->name == 'customer')
+                @if (Auth::user()->role->name == 'member')
                     <li class="nav-small-cap">PERSONAL</li>
                     <li>
                         <a class="" href="{{ url('/customer') }}" aria-expanded="false"><i
