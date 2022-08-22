@@ -1,5 +1,45 @@
 @extends('main')
+@section('links')
+    <style>
+        input[type=checkbox] {
+            display: none;
+        }
 
+        .container img {
+            /* margin: 100px; */
+            transition: transform 0.25s ease;
+            cursor: zoom-in;
+            /* display: block;
+            margin: auto; */
+            
+        }
+
+        input[type=checkbox]:checked ~ label > img{
+            transform: scale(10);
+            cursor: zoom-out;
+            
+        }
+
+        input[type=checkbox] {
+            display: none;
+        }
+
+        .container1 img {
+            /* margin: 100px; */
+            transition: transform 0.25s ease;
+            cursor: zoom-in;
+            /* display: block;
+            margin: auto; */
+            
+        }
+
+        input[type=checkbox]:checked ~ label > img{
+            transform: scale(10);
+            cursor: zoom-out;
+            
+        }
+    </style>
+@endsection
 @section('content')
     <div class="container-fluid">
 
@@ -28,10 +68,10 @@
                             <th>No</th>
                             <th>Nama Fasilitas</th>
                             <th>Gambar Fasilitas</th>
+                            <th>Bukti Pembayaran</th>
                             <th>Deskripsi Fasilitas</th>
                             <th>Harga</th>
                             <th>Tanggal Booking</th>
-                            <th>Bukti Pembayaran</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -40,11 +80,24 @@
                             <tr>
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $item->fasility->name }}</td>
-                                <td><img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
+                                <td><div class="container1">
+                                    <input type="checkbox" id="zoomCheck1">
+                                    <label for="zoomCheck1">
+                                        {{-- <img src="{{ asset($item->image) }}" alt="" width="50%"> --}}
+                                        <img src="{{ asset($item->fasility->image) }}" alt="" width="50%"></td>
+                                    </label>
+                                </div>
+                                <td>
+                                    <div class="container">
+                                        <input type="checkbox" id="zoomCheck">
+                                        <label for="zoomCheck">
+                                            <img src="{{ asset($item->image) }}" alt="" width="50%">
+                                        </label>
+                                    </div>
+                                </td>
                                 <td>{{ $item->fasility->desc }}</td>
                                 <td>{{ $item->fasility->price }}</td>
                                 <td>{{ Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
-                                <td><img src="{{ asset($item->image) }}" alt="" width="50%"></td>
                                 <td>
                                     @if ($item->status == '1')
                                         <button type="button" class="btn btn-success btn-sm">Approve</button>
