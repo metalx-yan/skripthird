@@ -31,10 +31,10 @@
                         <a class="" href="{{ route('fasilities.index') }}" aria-expanded="false"><i
                                 class="mdi mdi-gauge"></i><span class="hide-menu">Fasility</span></a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a class="" href="{{ route('members.index') }}" aria-expanded="false"><i
                                 class="mdi mdi-gauge"></i><span class="hide-menu">Member</span></a>
-                    </li>
+                    </li> --}}
                     <li>
                         <a class="" href="{{ route('users.index') }}" aria-expanded="false"><i
                                 class="mdi mdi-gauge"></i><span class="hide-menu">Admin</span></a>
@@ -49,7 +49,7 @@
                     </li>
                     <li>
                         <a class="" href="{{ route('admin.lists.history') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">History Approved</span></a>
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Report Approved</span></a>
                     </li>
                     {{-- <li>
                             <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Master Data</span></a>

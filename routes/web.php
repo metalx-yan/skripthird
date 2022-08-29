@@ -27,6 +27,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     Route::put('/restore/{id}', 'BookingController@restore')->name('admin.restore');
     Route::put('/lists/{id}', 'BookingController@listsApprove')->name('customer.lists.approve');
     Route::get('/lists', 'BookingController@adminlists')->name('admin.lists');
+    Route::post('/searching', 'BookingController@searching')->name('searching');
     Route::get('/lists/history', 'BookingController@adminlistshistory')->name('admin.lists.history');
 
 

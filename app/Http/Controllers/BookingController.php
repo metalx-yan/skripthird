@@ -117,6 +117,16 @@ class BookingController extends Controller
         return redirect()->back();
     }
 
+    public function searching(Request $request)
+    {
+        $all = Booking::whereYear('created_at', '=', $request->tahun)
+              ->whereMonth('created_at', '=', $request->bulan)
+              ->get();
+
+            //   dd($data, $request->all());die;
+        return view('admin.listhistory', compact('all'));
+    }
+
     public function restore(Request $request, $id)
     {
         // dd($request->all(),$id);

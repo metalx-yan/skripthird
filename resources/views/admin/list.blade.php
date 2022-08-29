@@ -61,6 +61,7 @@
                 $no = 1;
             @endphp
             <div class="card-body">
+                
                 <br>
                 <table class="table border" id="myTable">
                     <thead>
@@ -142,7 +143,10 @@
 
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                dom: 'Bfrtip', 
+                buttons: [ 'print' ] 
+            });
         });
     </script>
 @endsection

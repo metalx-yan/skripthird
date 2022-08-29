@@ -22,6 +22,40 @@
             @endphp
             <div class="card-body">
                 <br>
+                <form action="{{ route('searching') }}" method="post">
+                    @csrf
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <label for="">Tahun</label><br>
+                            <select name="tahun" id="" class="form-control" required>
+                                <option value=""></option>
+                                <option value="2022">2022</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Bulan</label><br>
+                            <select name="bulan" id="" class="form-control" required>
+                                <option value=""></option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary btn">Search</button>
+                </form>
+                <hr>
                 <table class="table border" id="myTable">
                     <thead>
                         <tr>
@@ -62,11 +96,14 @@
 @endsection
 
 @section('scripts')
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    {{-- <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> --}}
 
     <script>
         $(document).ready(function() {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                buttons: ['print']
+            });
         });
     </script>
 @endsection
