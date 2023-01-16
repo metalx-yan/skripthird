@@ -24,44 +24,21 @@
                                 class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
                     <li>
-                        <a class="" href="{{ route('categories.index') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Category</span></a>
-                    </li>
-                    <li>
-                        <a class="" href="{{ route('fasilities.index') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Fasility</span></a>
-                    </li>
-                    {{-- <li>
-                        <a class="" href="{{ route('members.index') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Member</span></a>
-                    </li> --}}
-                    <li>
                         <a class="" href="{{ route('users.index') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Admin</span></a>
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Account</span></a>
                     </li>
                     <li>
-                        <a class="" href="{{ route('peminjamans.index') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Peminjaman</span></a>
+                        <a class="" href="{{ route('products.index') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Product</span></a>
                     </li>
                     <li>
-                        <a class="" href="{{ route('admin.lists') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Penyewaan</span></a>
+                        <a class="" href="{{ route('transaksis.index') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Transaksi</span></a>
                     </li>
                     <li>
-                        <a class="" href="{{ route('admin.lists.history') }}" aria-expanded="false"><i
-                                class="mdi mdi-gauge"></i><span class="hide-menu">Report Approved</span></a>
+                        <a class="" href="{{ route('transaksis.summary') }}" aria-expanded="false"><i
+                                class="mdi mdi-gauge"></i><span class="hide-menu">Laporan Transaksi</span></a>
                     </li>
-                    {{-- <li>
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="mdi mdi-account-outline"></i><span class="hide-menu">Master Data</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{ route('barang.index') }}">Data Barang</a></li>
-                                <li><a href="{{ route('bahan.index') }}">Data Bahan</a></li>
-                                <li><a href="{{ route('returpenjualan.index') }}">Data Retur Penjualan</a></li>
-                                <li><a href="{{ route('spb') }}">Data SPB</a></li>
-                            </ul>
-                        </li> --}}
-                    {{-- <li><a href="{{ route('masuk') }}"><i class="mdi mdi-checkbox-marked-circle-outline"></i>Barang Masuk</a></li>
-                        <li><a href="{{ route('keluar') }}"><i class="mdi mdi-checkbox-multiple-marked-outline"></i>Barang Keluar</a></li> --}}
                 @endif
 
 

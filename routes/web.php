@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator']], function() {
 
     Route::get('/', function () {
@@ -23,7 +22,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:administrator'
     Route::resource('fasilities', 'FasilityController');
     Route::resource('members', 'MemberController');
     Route::resource('users', 'UserController');
+    Route::resource('products', 'ProductController');
     Route::resource('peminjamans', 'PeminjamanController');
+    Route::resource('transaksis', 'TransaksiController');
+    Route::post('/searching_product', 'TransaksiController@searching')->name('searching_product');
+    Route::get('/transaksisummary', 'TransaksiController@summary')->name('transaksis.summary');
+
     Route::put('/restore/{id}', 'BookingController@restore')->name('admin.restore');
     Route::put('/lists/{id}', 'BookingController@listsApprove')->name('customer.lists.approve');
     Route::get('/lists', 'BookingController@adminlists')->name('admin.lists');
