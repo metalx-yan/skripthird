@@ -41,8 +41,8 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $item->name }}</td>
                             <td>{{ $item->kuantitas }}</td>
-                            <td>{{ $item->harga }}</td>
-                            <td>{{ $item->total_harga }}</td>
+                            <td>Rp.{{ number_format($item->harga) }}</td>
+                            <td>Rp.{{ number_format($item->total_harga) }}</td>
                             <td>
                                 <div class="row">
                                     <div class="col-md-2">
