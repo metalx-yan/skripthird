@@ -85,7 +85,7 @@
                 </table> 
                     <br>
                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                    <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm">Back</a>
+                    <a href="{{ route('transaksis.index') }}" class="btn btn-warning btn-sm">Back</a>
             </form>
         </div>
     </div>

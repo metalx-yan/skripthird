@@ -16,7 +16,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $all = Transaksi::selectRaw('id,customer')->groupBy('customer')->get();
+        $all = Transaksi::selectRaw('id,customer,count(*)')->groupBy('customer')->get();
         // dd($all);
         return view('transaksis.index', compact('all'));
     }
@@ -143,6 +143,7 @@ class TransaksiController extends Controller
      */
     public function destroy($id)
     {
+        // dd($id);
         $get = Transaksi::find($id);
         $get->delete();
 

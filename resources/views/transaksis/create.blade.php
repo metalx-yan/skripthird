@@ -66,16 +66,16 @@
                         <th>Action</th>
                     </tr>
                     <tr>  
-                        <td><select name="addmore[0][product]" id="ganti_0" class="form-control"><option value="">Select Product</option>@foreach (App\Product::all() as $prod)<option value="{{$prod->id }}">{{ $prod->name }}</option>@endforeach</select></td>
+                        <td><select name="addmore[0][product]" id="ganti_0" class="form-control" required><option value="">Select Product</option>@foreach (App\Product::all() as $prod)<option value="{{$prod->id }}">{{ $prod->name }}</option>@endforeach</select></td>
                         <td><input readonly type="text" id="qty_0" name="addmore[0][kuantitas]" placeholder="Enter your Qty" class="form-control" /></td>  
                         <td><input readonly type="text" id="harga_0" name="addmore[0][harga]" placeholder="Enter your Harga" class="form-control" /></td>  
-                        <td><input type="number" id="order_0" name="addmore[0][order]" placeholder="Enter your Order" class="form-control" /></td>  
+                        <td><input type="number" id="order_0" name="addmore[0][order]" placeholder="Enter your Order" class="form-control" required/></td>  
                         <td><button type="button" name="add" id="add" class="btn btn-success">Add More</button></td>  
                     </tr>  
                 </table> 
                     <br>
                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
-                    <a href="{{ route('products.index') }}" class="btn btn-warning btn-sm">Back</a>
+                    <a href="{{ route('transaksis.index') }}" class="btn btn-warning btn-sm">Back</a>
             </form>
         </div>
     </div>
@@ -90,7 +90,7 @@
    
         ++i;
    
-        $("#dynamicTable").append('<tr><td><select name="addmore['+i+'][product]" id="ganti_'+i+'" class="form-control"><option value="">Select Product</option>@foreach (App\Product::all() as $prod)<option value="{{$prod->id }}">{{ $prod->name }}</option>@endforeach</select></td><td><input readonly type="text" id="qty_'+i+'" name="addmore['+i+'][kuantitas]" placeholder="Enter your Qty" class="form-control" /></td><td><input readonly type="text" id="harga_'+i+'" name="addmore['+i+'][harga]" placeholder="Enter your Harga" class="form-control" /></td><td><input type="number" name="addmore['+i+'][order]" id="order_'+i+'" placeholder="Enter your Order" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>');
+        $("#dynamicTable").append('<tr><td><select name="addmore['+i+'][product]" id="ganti_'+i+'" class="form-control" required><option value="">Select Product</option>@foreach (App\Product::all() as $prod)<option value="{{$prod->id }}">{{ $prod->name }}</option>@endforeach</select></td><td><input readonly type="text" id="qty_'+i+'" name="addmore['+i+'][kuantitas]" placeholder="Enter your Qty" class="form-control" /></td><td><input readonly type="text" id="harga_'+i+'" name="addmore['+i+'][harga]" placeholder="Enter your Harga" class="form-control" /></td><td><input type="number" name="addmore['+i+'][order]" id="order_'+i+'" placeholder="Enter your Order" class="form-control" required/></td><td><button type="button" class="btn btn-danger remove-tr">Remove</button></td></tr>');
         $('#ganti_'+i+'').on('change', function (e) {
             var val = e.target.value
             // $.post('{{ route("searching_product") }}',val,function(data){ 

@@ -34,15 +34,10 @@
                     </div>
                     <div class="col-md-3">
                         <label for="">Harga</label>
-                        <input type="number" name="harga" value="{{ $get->harga }}" class="form-control {{ $errors->has('harga') ? 'is-invalid' : ''}}" required>
+                        <input type="text" name="harga" id="aaaa" value="{{ $get->harga }}" class="form-control {{ $errors->has('harga') ? 'is-invalid' : ''}}" required>
                         {!! $errors->first('harga', '<span class="invalid-feedback">:message</span>') !!}
                     </div>
-                    <div class="col-md-3">
-                        <label for="">Total Harga</label>
-                        <input type="number" name="total_harga" value="{{ $get->total_harga }}" class="form-control {{ $errors->has('total_harga') ? 'is-invalid' : ''}}" required>
-                        {!! $errors->first('total_harga', '<span class="invalid-feedback">:message</span>') !!}
-                    </div>
-
+               
                 </div>
                     <br>
                     <button type="submit" class="btn btn-primary btn-sm">Submit</button>
@@ -51,4 +46,32 @@
         </div>
     </div>
 </div>
+@endsection
+@section('scripts')
+    <script type="text/javascript">
+        function updateTextView(_obj) {
+            var num = getNumber(_obj.val());
+            if (num == 0) {
+                _obj.val('');
+            } else {
+                _obj.val(num.toLocaleString());
+            }
+        }
+
+        function getNumber(_str) {
+            var arr = _str.split('');
+            var out = new Array();
+            for (var cnt = 0; cnt < arr.length; cnt++) {
+                if (isNaN(arr[cnt]) == false) {
+                    out.push(arr[cnt]);
+                }
+            }
+            return Number(out.join(''));
+        }
+        $(document).ready(function() {
+            $('#aaaa').on('keyup', function() {
+                updateTextView($(this));
+            });
+        });
+    </script>
 @endsection

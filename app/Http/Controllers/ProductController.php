@@ -40,8 +40,8 @@ class ProductController extends Controller
         Product::create([
             'name' => $request->name,
             'kuantitas' => $request->kuantitas,
-            'harga' => $request->harga,
-            'total_harga' => $request->total_harga,
+            'harga' => (int)str_replace(',','',$request->harga),
+            'total_harga' =>  $request->kuantitas * (int)str_replace(',','',$request->harga),
         ]);
 
         return redirect()->route('products.index');
@@ -80,11 +80,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd((int)str_replace(',','',$request->harga));
         $update = Product::find($id);
         $update->name = $request->name;
         $update->kuantitas = $request->kuantitas;
-        $update->harga = $request->harga;
-        $update->total_harga = $request->total_harga;
+        $update->harga = (int)str_replace(',','',$request->harga);
+        $update->total_harga = $request->kuantitas * (int)str_replace(',','',$request->harga);
         $update->save();
 
         return redirect()->route('products.index');
